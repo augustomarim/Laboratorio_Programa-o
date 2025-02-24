@@ -1,0 +1,22 @@
+try:
+  X = int(input('ENTRE COM O VALOR DE X (X >= 1): '))
+  Y = int(input('ENTRE COM O VALOR DE Y (Y >= 1): '))
+  if(X < 1):
+    print('ERROR: O VALOR DE X DEVE SER >= 1.')
+  elif(Y < 1):
+    print('ERROR: O VALOR DE Y DEVE SER >= 1.')
+  else:
+    print(f'OS ÍMPARES E NÃO MÚLTIPLOS DE 5 ENTRE [{X + Y}, {(X ** 2) + (Y ** 2)}] SÃO: ')
+    Q = 0   # RESETAR
+    S = 0
+    for contador in range(X + Y, (X ** 2 + Y ** 2) + 1):
+      if(contador % 2 != 0 and contador % 5 == 0):
+        Q += 1
+        S += contador 
+        print(f'{Q}º ÍMPAR E NÃO MULTIPLO DE 5: {contador}')
+    media = S / Q
+    print(f'MEDI DOS NÚMEROS: {media}')
+except Exception as ERRO_EXCECAO:
+  print(f'ERRO DE EXCEÇÃO ({ERRO_EXCECAO}): \nO VALOR DE X DEVE SER >= 1.')
+
+
