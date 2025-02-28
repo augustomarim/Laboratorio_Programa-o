@@ -1,0 +1,74 @@
+#1
+
+import math
+try:
+  r = float(input('Valor do Raio(r): '))
+  if(r <= 0):
+    print('ERROR: Dados de entrada')
+  else:
+    area = 4 * math.pi * (r**2)
+    volume = (4/3) * math.pi * (r**3)
+    print(f'O volume de uma esfera de raio: {r} é {volume:.2f}')
+    print(f'A área de uma esfera de raio: {r} é {area:.2f}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+#2
+
+try:
+  b = float(input('Valor da Base(B > 0) em centímetros: '))
+  h = float(input('Valor da Altura(H > 0) em centímetros: '))
+  if(b <= 0 or h <=0):
+    print('ERROR: Dados de entrada')
+  else:
+    perimetroCentimetro = (2*b) + (2*h)
+    perimetroPolegada = perimetroCentimetro / 2.54
+    perimetroJarda = perimetroCentimetro / 91.44
+    print(f'O valor do Perímetro em centímetros é {perimetroCentimetro:.2f}')
+    print(f'O valor do Perímetro em polegadas é {perimetroPolegada:.2f}')
+    print(f'O valor do Perímetro em jardas é {perimetroJarda:.2f}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+#3
+
+try:
+  s = int(input('tempo (segundos) de permanência de um aluno no Laboratório de Programação: '))
+  if(s < 0):
+    print('ERROR: Dados de entrada')
+  else:
+    h = s // 3600
+    m = (s % 3600) // 60
+    seg = s % 60
+    print(f'Tempo: {s} segundos')
+    print(f'Horas: {h} horas')
+    print(f'Minutos: {m} minutos')
+    print(f'Segundos: {seg} segundos')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+#4
+
+try:
+  h = float(input('Valor da Altura(H > 0) em centímetros: '))
+  if(h <=0):
+    print('ERROR: Dados de entrada')
+  else:
+    h /= 100
+    sexo = input('Qual o seu sexo(Homem ou Mulher): ')
+    if(sexo.lower() == 'homem'):
+      peso = (72.7 * h) - 58
+      print(f'Peso ideal para Homens é: {peso:.2f}')
+    else:
+      peso = (62.1 * h) - 44.7
+      print(f'Peso ideal para Mulheres é: {peso:.2f}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+
+
+
+
+
