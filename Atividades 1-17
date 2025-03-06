@@ -66,6 +66,61 @@ try:
 except Exception as ERRO_EXCECAO: 
   print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 
+#5
+
+try:
+  criancas = int(input('Quantas crianças abaixo de 10 anos? '))
+  jovens = int(input('Jovens de a 11 a 17 pagam 1/2 entrada? '))
+  adultoMeia = int(input('Acima dos 18 anos que doaram um quilo de alimento não perecível? '))
+  adultoNormal = int(input('Acima dos 18 anos? '))
+  valor = float(input('O valor inteiro do ingresso? '))
+  if(criancas < 0 or jovens < 0 or adultoMeia < 0 or adultoNormal < 0):
+    print('ERROR: Dados de entrada')
+  else:
+    valorAdq = (criancas * valor) + (jovens * valor) + (adultoMeia * valor) + (adultoNormal * valor)
+    quantidade = criancas + jovens + adultoMeia + adultoNormal
+    print(f'Público total: {quantidade}\nValor arrecadado: {valorAdq:.2f}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+#6
+
+try:
+  n = int(input('Escolha um número positivo? '))
+  if(n < 0):
+    print('ERROR: Dados de entrada')
+  else:
+    n2 = n**2
+    if(n**2 % 11 == 0):
+      print(f'Quadrado de {n} é {n2}, e é multiplo de 11')
+    else:
+      print(f'Quadrado de {n} é {n2}, e não é multiplo de 11')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+#7
+
+try:
+  mercadoria = int(input('Unidades da mercadoria: '))
+  valor = float(input('Valor da mercadoria(R$): '))
+  reajuste = float(input('Valor do reajuste(%): '))
+  opcao = float(input('Digita 1 para Acréscimo ou 0 Desconto: '))
+  if(mercadoria < 0 or valor < 0 or reajuste < 0 or opcao < 0 or opcao > 1):
+     print('ERROR: Dados de entrada')
+  else:
+    valor2 = valor * mercadoria
+    if(opcao == 1):
+      acres = valor2 * (reajuste / 100)
+      valor3 = acres + valor2
+      print(f'Valor da(s) mercadorias com acréscimo é {valor3}')
+    else:
+      desc = valor2 * (reajuste / 100)
+      valor3 = valor2 - desc
+      print(f'Valor da(s) mercadorias com desconto é {valor3}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
 
 
 
