@@ -52,7 +52,7 @@ except Exception as ERRO_EXCECAO:
 
 try:
   h = float(input('Valor da Altura(H > 0) em centímetros: '))
-  if(h <=0):
+  if(h <=0 ):
     print('ERROR: Dados de entrada')
   else:
     h /= 100
@@ -120,6 +120,129 @@ try:
 except Exception as ERRO_EXCECAO: 
   print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 
+#8
+
+try:
+  escala = int(input('Qual a escala de entrada? 0 para Celsius(C) e 1 para Fahrenheit(F): '))
+  if(escala < 0 or escala > 1):
+    print('ERROR: Dados de entrada')
+  else:
+    if(escala == 0):
+      temperatura = float(input('Qual a temperatura em Celsius(C): '))
+      conversao = (temperatura * 1.8) + 32
+      print(f'A temperatura em Celsius({temperatura:.0f}°) é igual á {conversao:.0f}° Farenheit')
+    else:
+      temperatura = float(input('Qual a temperatura em Fahrenheit(F): '))
+      conversao = (temperatura - 32) * (5/9)
+      print(f'A temperatura em Fahrenheit({temperatura:.0f}°) é igual á {conversao:.0f}° Celsius')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+#9
+
+try:
+  moeda = int(input('Qual a moeda que você quer converter? 0 para Real(R$), 1 para Dólar(US$) e 2 para Libra(£): '))
+  if(moeda < 0 or moeda > 2):
+    print('ERROR: Dados de entrada')
+  else:
+    if(moeda == 0):
+      valor = float(input('Quantos Reais(R$) você quer converter: '))
+      conversaoRealDolar = valor / 5.79
+      conversaoRealLibra = valor / 7.48
+      print(f'{valor:.2f}R$ é igual a: \nDólar: {conversaoRealDolar:.2f}US$ \nLibra: {conversaoRealLibra:.2f}£')
+    elif(moeda == 1):
+      valor = float(input('Quantos Doláres(US$) você quer converter: '))
+      conversaoDolarReal = valor * 5.79
+      conversaoDolarLibra = valor / 1.29
+      print(f'{valor:.2f}US$ é igual a: \nReal: {conversaoDolarReal:.2f}R$ \nLibra: {conversaoDolarLibra:.2f}£')
+    else:
+      valor = float(input('Quantos Libras(£) você quer converter: '))
+      conversaoLibraReal = valor * 7.48
+      conversaoLibraDolar = valor * 1.29
+      print(f'{valor:.2f}£ é igual a: \nReal: {conversaoLibraReal:.2f}R$ \nDólar: {conversaoLibraDolar:.2f}£')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+#10
+
+try:
+  unidade = int(input('Qual a unidade de massa que você quer converter? 0 para Onças(Oz), 1 para Toneladas(T) e 2 para Quilogramas(Kg): '))
+  if(unidade < 0 or unidade > 2):
+    print('ERROR: Dados de entrada')
+  else:
+    if(unidade == 0):
+      valor = float(input('Qual valor de Massa(oz) que você vai converter: '))
+      conversaoOzT = valor / 35273.94
+      conversaoOzKg = valor / 35.2739
+      print(f'{valor:.2f}(oz) é igual a: \nToneladas: {conversaoOzT:.2f}(t) \nQuilogramas: {conversaoOzKg:.2f}(kg)')
+    elif(unidade == 1):
+      valor = float(input('Qual valor de Massa(t) que você vai converter: '))
+      conversaoTOz = valor * 35273.94
+      conversaoTKg = valor * 1000
+      print(f'{valor:.2f}(t) é igual a: \nOnças: {conversaoTOz:.2f}(oz) \nQuilogramas: {conversaoTKg:.2f}(kg)')
+    else:
+      valor = float(input('Qual valor de Massa(kg) que você vai converter: '))
+      conversaoKgOz = valor * 35.2739
+      conversaoKgT = valor / 1000
+      print(f'{valor:.2f}(kg) é igual a: \nOnças: {conversaoKgOz:.2f}(oz) \nToneladas: {conversaoKgT:.2f}(t)')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+#11
+
+try:
+  entrada = input('Hora de Entrada(HH:MM): ' )
+  horasEntrada, minutosEntrada = map(int, entrada.split(':'))
+  minutosEntradaTotal = (horasEntrada * 60) + minutosEntrada
+  if(horasEntrada < 0 or horasEntrada > 25 or minutosEntrada > 59 or minutosEntrada < 0 or minutosEntradaTotal > 1440):
+    print('ERROR: Dados de entrada')
+  else:
+    saida = input('Hora de Saída(HH:MM): ' )
+    horasSaida, minutosSaida = map(int, saida.split(':'))
+    minutosSaidaTotal = (horasSaida * 60) + minutosSaida
+    if(minutosSaidaTotal < minutosEntradaTotal or minutosSaida > 1440):
+      print('ERROR: Dados de entrada')
+    else:
+      valor = float(input('Valor pago a cada 30 minutos: '))
+      if(valor < 0):
+        print('ERROR: Dados de entrada')
+      else:
+        if(minutosEntradaTotal == minutosSaidaTotal):
+          valorTotal = (minutosSaidaTotal - minutosEntradaTotal) * valor
+          print(f'O valor a ser pago do horário [{entrada}] até [{saida}] é {valorTotal:.2f} R$')
+        else:
+          valorTotal = (((minutosSaidaTotal - minutosEntradaTotal) - 30) / 30) * valor
+          print(f'O valor a ser pago do horário [{entrada}] até [{saida}] é {valorTotal:.2f} R$')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}') 
+
+
+#12
+
+try:
+  h = float(input('Valor da Altura(H > 0) em centímetros: '))
+  m = float(input('Valor da Altura(H > 0) em quilogramas: 
+  '))
+  if(h <= 0 or m <= 0):
+    print('ERROR: Dados de entrada')
+  else:
+    h /= 100
+    imc = m / (h**2)
+    if(imc < 18.5):
+      print(f'o IMC:{imc:.1f} corresponde a Magreza')
+    elif(imc < 25):
+      print(f'o IMC:{imc:.1f} corresponde a Saudável')
+    elif(imc < 30):
+      print(f'o IMC:{imc:.1f} corresponde a Sobrepeso')
+    elif(imc < 35):
+      print(f'o IMC:{imc:.1f} corresponde a Obesidade grau I')
+    elif(imc < 40):
+      print(f'o IMC:{imc:.1f} corresponde a Obesidade grau II(Severa)')
+    else:
+      print(f'o IMC:{imc:.1f} corresponde a Obesidade grau III(Mórbida)')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 
 
 
