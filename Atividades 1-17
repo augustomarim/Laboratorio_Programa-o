@@ -298,6 +298,65 @@ except Exception as ERRO_EXCECAO:
 
 #15
 
+try:
+  n1 = int(input('Informe o 1º número: '))
+  n2 = int(input('Informe o 2º número: '))
+  if(n1 == n2):
+    print('ERROR: NÚMEROS IGUAIS, SELECIONE NUMEROS DIFERENTES')
+  else:
+    n3 = int(input('Informe o 3º número: '))
+    if(n1 == n3 or n2 == n3):
+      print('ERROR: NÚMEROS IGUAIS, SELECIONE NUMEROS DIFERENTES')
+    else:
+      n4 = int(input('Informe o 4º número: '))
+      if(n1 == n4 or n2 == n4 or n3 == n4):
+        print('ERROR: NÚMEROS IGUAIS, SELECIONE NUMEROS DIFERENTES')
+      else:
+        n5 = int(input('Informe o 5º número: '))
+        if(n1 == n5 or n2 == n5 or n3 == n5 or n4 == n5):
+          print('ERROR: NÚMEROS IGUAIS, SELECIONE NUMEROS DIFERENTES')
+        else:
+          somaPares = 0
+          qtdPares = 0
+          somaImpar = 0
+          qtdImpar = 0
+          if(n1 % 2 == 0):
+            somaPares += n1
+            qtdPares += 1
+          else:
+            somaImpar += n1
+            qtdImpar += 1
+          if(n2 % 2 == 0):
+            somaPares += n2
+            qtdPares += 1
+          else:
+            somaImpar += n2
+            qtdImpar += 1
+          if(n38 % 2 == 0):
+            somaPares += n3
+            qtdPares += 1
+          else:
+            somaImpar += n3
+            qtdImpar += 1
+          if(n4 % 2 == 0):
+            somaPares += n4
+            qtdPares += 1
+          else:
+            somaImpar += n4
+            qtdImpar += 1
+          if(n5 % 2 == 0):
+            somaPares += n5
+            qtdPares += 1
+          else:
+            somaImpar += n5
+            qtdImpar += 1
+          mediaPar = somaPares / qtdPares
+          mediaImpar = somaImpar / qtdImpar
+          print(f'A Media do números Pares é {mediaPar:.2f}')
+          print(f'A Media do números Impares é {mediaImpar:.2f}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
 
 
 
