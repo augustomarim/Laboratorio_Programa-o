@@ -77,11 +77,12 @@ try:
   if(criancas < 0 or jovens < 0 or adultoMeia < 0 or adultoNormal < 0):
     print('ERROR: Dados de entrada')
   else:
-    valorAdq = (criancas * valor) + (jovens * valor) + (adultoMeia * valor) + (adultoNormal * valor)
+    valorAdq = ((jovens * valor) / 2) + ((adultoMeia * valor) / 2) + (adultoNormal * valor)
     quantidade = criancas + jovens + adultoMeia + adultoNormal
     print(f'Público total: {quantidade}\nValor arrecadado: {valorAdq:.2f}')
 except Exception as ERRO_EXCECAO: 
   print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
 
 #6
 
