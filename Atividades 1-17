@@ -357,6 +357,42 @@ try:
 except Exception as ERRO_EXCECAO: 
   print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 
+#16
+
+try:
+  n1 = float(input('Informe o 1º número: '))
+  n2 = float(input('Informe o 2º número: '))
+  if(n1 == n2):
+    print('ERROR: NÚMEROS IGUAIS, SELECIONE NUMEROS DIFERENTES')
+  else:
+    n3 = float(input('Informe o 3º número: '))
+    if(n1 == n3 or n2 == n3):
+      print('ERROR: NÚMEROS IGUAIS, SELECIONE NUMEROS DIFERENTES')
+    else:
+      maior = max(n1, n2, n3)
+      menor = min(n1, n2, n3)
+      print(f'A Média do menor e maior numero é {(maior + menor) / 2}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+#17
+
+try:
+  a = float(input('Valor do lado A: '))
+  b = float(input('Valor do lado B: '))
+  c = float(input('Valor do lado C: '))
+  if(a > b + c or b > a + c or c > a + b):
+    print('Não é um Triangulo')
+  else:
+    if(a == b and a == c and b == c):
+      print('É um triangulo equilátero')
+    elif(a != b and a !=c and b != c):
+      print('É um triangulo escaleno')
+    else:
+      print('É um triangulo isósceles')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 
 
 
