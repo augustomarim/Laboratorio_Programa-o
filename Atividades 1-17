@@ -195,25 +195,24 @@ try:
   entrada = input('Hora de Entrada(HH:MM): ' )
   horasEntrada, minutosEntrada = map(int, entrada.split(':'))
   minutosEntradaTotal = (horasEntrada * 60) + minutosEntrada
-  if(horasEntrada < 0 or horasEntrada > 25 or minutosEntrada > 59 or minutosEntrada < 0 or minutosEntradaTotal > 1440):
+  if(horasEntrada < 0 or horasEntrada > 23 or minutosEntrada > 59 or minutosEntrada < 0 or minutosEntradaTotal > 1440):
     print('ERROR: Dados de entrada')
   else:
     saida = input('Hora de Saída(HH:MM): ' )
     horasSaida, minutosSaida = map(int, saida.split(':'))
     minutosSaidaTotal = (horasSaida * 60) + minutosSaida
-    if(minutosSaidaTotal < minutosEntradaTotal or minutosSaida > 1440):
+    if(minutosSaida >= 1440 or horasSaida < 0 or horasSaida > 23 or minutosSaida > 59 or minutosSaida < 0):
       print('ERROR: Dados de entrada')
     else:
+      if(minutosSaidaTotal <= minutosEntradaTotal):
+        minutosSaidaTotal += 1440
       valor = float(input('Valor pago a cada 30 minutos: '))
       if(valor < 0):
         print('ERROR: Dados de entrada')
       else:
-        if(minutosEntradaTotal == minutosSaidaTotal):
-          valorTotal = (minutosSaidaTotal - minutosEntradaTotal) * valor
-          print(f'O valor a ser pago do horário [{entrada}] até [{saida}] é {valorTotal:.2f} R$')
-        else:
-          valorTotal = (((minutosSaidaTotal - minutosEntradaTotal) - 30) / 30) * valor
-          print(f'O valor a ser pago do horário [{entrada}] até [{saida}] é {valorTotal:.2f} R$')
+        periodo = round(((minutosSaidaTotal - minutosEntradaTotal) - 30) / 30)
+        valorTotal = periodo * valor
+        print(f'O valor a ser pago do horário [{entrada}] até [{saida}] é {valorTotal:.2f} R$')
 except Exception as ERRO_EXCECAO: 
   print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}') 
 
@@ -222,8 +221,7 @@ except Exception as ERRO_EXCECAO:
 
 try:
   h = float(input('Valor da Altura(H > 0) em centímetros: '))
-  m = float(input('Valor da Altura(H > 0) em quilogramas: 
-  '))
+  m = float(input('Valor da Altura(H > 0) em quilogramas: '))
   if(h <= 0 or m <= 0):
     print('ERROR: Dados de entrada')
   else:
