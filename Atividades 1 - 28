@@ -19,3 +19,22 @@ for contador in range(200, 99, -1):
     quantidade += 1
     print(f'{quantidade}º NÚMERO: {contador}')
 print(f'A soma dos numeros é: {soma} e a media deles é {soma / quantidade}')
+
+
+#3
+
+try:
+  multiplo = int(input('Escolha o numero que você quer descobrir os múltiplos: '))
+  limI = int(input('Escolha um valor para ser o Limite Inferior: '))
+  limS = int(input('Escolha um valor para ser o Limite Superior: '))
+  if(limI > limS or multiplo < 2):
+    print('ERROR: Erro de Entrada')
+  else:
+    quantidade = 0
+    print(f'Numeros múltiplos de {multiplo} compreendidos no intervalo: [{limI} {limS}]:')
+    for contador in range(limI, limS + 1):
+      if(contador % multiplo == 0):
+        quantidade += 1
+        print(f'{quantidade}º NÚMERO: {contador}')
+except Exception as ERRO_EXCECAO: 
+  print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
