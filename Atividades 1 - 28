@@ -38,3 +38,22 @@ try:
         print(f'{quantidade}º NÚMERO: {contador}')
 except Exception as ERRO_EXCECAO: 
   print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+#4 
+
+somaP = 0
+somaI= 0
+quantidadeP = 0
+quantidadeI = 0
+print('Soma dos numeros pares e impares compreendidos no intervalo: [10 99].')
+for contador in range(10, 99):
+  if(contador % 2 == 0):
+    somaP += contador
+    quantidadeP += 1
+    print(f'{quantidadeP}º NÚMERO PAR: {contador}')
+  else:
+    somaI += contador
+    quantidadeI += 1
+    print(f'{quantidadeI}º NÚMERO ÍMPAR: {contador}')
+print(f'A soma dos numeros pares é: {somaP} e a soma dos ímpares é: {somaI}')
