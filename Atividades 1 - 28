@@ -57,3 +57,128 @@ for contador in range(10, 99):
     quantidadeI += 1
     print(f'{quantidadeI}º NÚMERO ÍMPAR: {contador}')
 print(f'A soma dos numeros pares é: {somaP} e a soma dos ímpares é: {somaI}')
+
+
+#5
+
+somaEmp = 0
+somaDes = 0
+habitantes = 0
+while(habitantes < 10000):
+  try:
+    print('Digite 1 se você está empregado e 0 se estiver desempregado: ', end ='')
+    situacao = int(input())
+    if(situacao < 0 or situacao > 1):
+      print('ERRO: DIGITE 1 OU 0.')
+    else:
+      if(situacao == 1): 
+        somaEmp += 1
+      else:
+        somaDes += 1
+      habitantes += 1 
+  except Exception as ERRO_EXCECAO:
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+porcEmp = (somaEmp / habitantes) * 100
+porcDes = (somaDes / habitantes) * 100
+print(f'Porcentagem de Empregados : {porcEmp:.1f}%')
+print(f'Porcentagem de Desempregados : {porcDes:.1f}%')
+
+
+
+#6
+
+clientes = 0
+salarioM = 998.05
+a, b, c = 0, 0, 0
+while(clientes < 10):
+  try:
+    print('Digite seu salário em Reais(R$): ', end ='')
+    salario = float(input())
+    if(salario <= (salarioM * 5)):
+      c += 1
+    elif(salario >= (salarioM * 15)):
+      a += 1
+    else:
+      b += 1
+    clientes += 1
+  except Exception as ERRO_EXCECAO:
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+porcC = (c / habitantes) * 100
+porcA = (a / habitantes) * 100
+porcB = (b / habitantes) * 100
+print(f'Porcentagem de clientes que recebem menos de 5 salários minimos(998.05): {porcC:.1f}%')
+print(f'Porcentagem de clientes que recebem mais de 15 salários minimos(998.05): {porcA:.1f}%')
+print(f'Porcentagem de clientes que recebem entre 5 a 15 salários minimos (998.05): {porcB<.1f}%')
+
+
+#7
+
+quantidade = 0
+soma = 0
+print('números ímpares que são múltiplos de 3 e NÃO múltiplos de 5 que se encontram no intervalo [9 90].')
+for contador in range(9, 90):
+  if(contador % 3 == 0 and contador % 5 != 0 and contador % 2 != 0):
+    quantidade += 1
+    soma += contador
+    print(f'{quantidade}º NÚMERO: {contador}')
+print(f'A soma destes números é {soma}')
+
+#8
+
+clientes, mix1, mix2, mix3 = 0, 0, 0, 0  
+while True:
+  try:
+    print('MENU: CADASTRO DE VOTOS ')
+    print('OPÇÃO [1]: CADASTRAR VOTO')
+    print('OPÇÃO [0]: ENCERRAR A VOTAÇÃO')
+    opcao = int(input('SUA OPÇÃO: '))
+    if(opcao == 0):
+      print('VOTAÇÃO ENCERRADA!')
+      break
+    elif(opcao != 1):
+      print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
+    else:
+      print('Qual mix de sabores você mais gostou? 1: Mix 1, 2: Mix 2 ou 3: Mix 3')
+      print('MENU: 1 (MIX 1), 2 (MIX 2), 3(MIX 3): ', end="")
+      voto = int(input())
+      if(voto < 1 or voto > 3):
+        print('ERRO: O voto de ser 1, 2 ou 3')
+      else:
+        if(voto == 1):
+          mix1 += 1
+        elif(voto == 2):
+          mix2 += 1
+        else:
+          mix3 += 1
+        clientes += 1
+        print('Resultado da Pesquisa:')
+        p1 = mix1 / clientes * 100
+        p2 = mix2 / clientes * 100
+        p3 = mix3 / clientes * 100
+        print(f'Total de votos para o MIX 1: {mix1} alunos - ({p1: .1f} %)')
+        print(f'Total de votos para o MIX 2: {mix2} alunos - ({p2: .1f} %)')
+        print(f'Total de votos para o MIX 3: {mix3} alunos - ({p3: .1f} %)')
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+#9
+
+
+soma = 0
+while True:
+  try:
+    print('Digite um numero: ', end="")
+    numero = int(input())
+    if(numero == 0):
+      print('FIM DO PROGRAMA!')
+      break
+    if(numero > 10 and numero < 90 and numero % 5 == 2):
+      soma += numero
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'Soma dos números lidos que, no intervalo entre [10 90], dividos por 5 possuem resto 2: {soma}')
+
+
+
+
