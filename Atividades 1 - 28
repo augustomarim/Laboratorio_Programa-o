@@ -18,7 +18,7 @@ for contador in range(200, 99, -1):
     soma += contador
     quantidade += 1
     print(f'{quantidade}º NÚMERO: {contador}')
-print(f'A soma dos numeros é: {soma} e a media deles é {soma / quantidade}')
+print(f'A soma dos numeros é: {soma} e a media deles é {soma / quantidade:.2f}')
 
 
 #3
@@ -108,7 +108,7 @@ porcA = (a / habitantes) * 100
 porcB = (b / habitantes) * 100
 print(f'Porcentagem de clientes que recebem menos de 5 salários minimos(998.05): {porcC:.1f}%')
 print(f'Porcentagem de clientes que recebem mais de 15 salários minimos(998.05): {porcA:.1f}%')
-print(f'Porcentagem de clientes que recebem entre 5 a 15 salários minimos (998.05): {porcB<.1f}%')
+print(f'Porcentagem de clientes que recebem entre 5 a 15 salários minimos (998.05): {porcB:.1f}%')
 
 
 #7
@@ -178,6 +178,44 @@ while True:
   except Exception as ERRO_EXCECAO: 
     print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 print(f'Soma dos números lidos que, no intervalo entre [10 90], dividos por 5 possuem resto 2: {soma}')
+
+
+#10
+
+while True:
+  try:
+    quantidade = 0
+    soma = 0
+    print('Escolha um numero inteiro maior que 1: ', end="")
+    x = int(input())
+    if(x < 1):
+      print('ERROR: NÚMERO ESCOLHIDO MENOR QUE 1.')
+    else:
+      for contador in range(6, (6 * x) + 1):
+        if(contador % 6 == 0):
+          quantidade += 1
+          soma += contador
+          print(f'{quantidade}º NÚMERO: {contador}')
+    print(f'Média dos múltiplos de 6 que se encontram no intervalo [6, {6 * x}] é {soma / quantidade:.2f}')
+    break
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
+
+#11
+
+while True:
+  try:
+    quantidade = 0
+    print('Escolha um numero inteiro: ', end="")
+    x = int(input())
+    for contador in range(x + 1, x + 51):
+      quantidade += 1 
+      print(f'{quantidade}º NÚMERO SUBSEQUENTE DE {x}: {contador}')
+    break
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+
 
 
 
