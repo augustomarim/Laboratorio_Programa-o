@@ -18,7 +18,7 @@ for contador in range(200, 99, -1):
     soma += contador
     quantidade += 1
     print(f'{quantidade}º NÚMERO: {contador}')
-print(f'A soma dos numeros é: {soma} e a media deles é {soma / quantidade:.2f}')
+print(f'A soma dos numeros é: {soma} e a media deles é {soma / quantidade}')
 
 
 #3
@@ -216,6 +216,25 @@ while True:
   except Exception as ERRO_EXCECAO: 
     print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 
+
+#12
+
+
+soma, quantidade, media = 0, 1, 0
+while True:
+  try:
+    print(f'Digite o valor da temperatura de hoje: ', end="")
+    temp = float(input())
+    if(temp < 28):
+      print('ERROR: TEMPERATURA FORA DA ESTAÇÃO')
+      break
+    else:
+      quantidade += 1
+      soma += temp
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+  media = soma / (quantidade - 1)
+print(f'Temperatura média dessa estação é {media:.1f} °C')
 
 
 
