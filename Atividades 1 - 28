@@ -220,7 +220,7 @@ while True:
 #12
 
 
-soma, quantidade, media = 0, 1, 0
+soma, quantidade, media = 0, 0, 0
 while True:
   try:
     print(f'Digite o valor da temperatura de hoje: ', end="")
@@ -233,9 +233,8 @@ while True:
       soma += temp
   except Exception as ERRO_EXCECAO: 
     print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
-  media = soma / (quantidade - 1)
+  media = soma / quantidade 
 print(f'Temperatura média dessa estação é {media:.1f} °C')
-
 
 
 
