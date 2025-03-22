@@ -237,4 +237,69 @@ while True:
 print(f'Temperatura média dessa estação é {media:.1f} °C')
 
 
+#13
+
+somaM, somaF, qtdM, qtdF, maiorM, maiorF = 0, 0, 0, 0, 0, 0
+altosM, altosF, qtd, mediaM, mediaF = 0, 0, 0, 0, 0
+porcM, porcF, porcMF = 0, 0, 0
+while True:
+  try:
+    if(qtd == 50):
+      break
+    print('MENU: SELECIONE O SEU SEXO ')
+    print('OPÇÃO [1]: MASCULINO')
+    print('OPÇÃO [2]: FEMININO')
+    print('OPÇÃO [0]: ENCERRAR PROGRAMA')
+    opcao = int(input('SUA OPÇÃO: '))
+    qtd += 1
+    if(opcao == 0):
+      print('PROGRAMA ENCERRADO!')
+      break
+    elif(opcao > 2 or opcao < 1):
+      print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
+    else:
+      if(opcao == 1):
+        print('QUAL A SUA ALTURA: ', end="")
+        alturaM = float(input())
+        print('----------------------------------')
+        if(alturaM > 100):
+          alturaM /= 100
+        somaM += alturaM
+        qtdM += 1
+        if(alturaM > maiorM):
+          maiorM = alturaM
+        if(alturaM >= 1.82):
+          altosM += 1
+      else:
+        print('QUAL A SUA ALTURA: ', end="")
+        alturaF = float(input())
+        print('----------------------------------')
+        if(alturaF > 100):
+          alturaF /= 100
+        somaF += alturaF
+        qtdF += 1
+        if(alturaF > maiorF):
+          maiorF = alturaF
+        if(alturaF >= 1.82):
+          altosF += 1
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+if(qtdM > 0 or qtdF > 0):
+  mediaM = somaM / qtdM
+  mediaF = somaF / qtdF
+  porcM = (altosM / qtdM) * 100
+  porcF = (altosF / qtdF) * 100
+  porcMF = ((altosM + altosF) / (qtdM + qtdF)) * 100
+print('----------------------------------')
+print(f'ALTURA DO HOMEN MAIS ALTO: {maiorM}')
+print(f'ALTURA DA MULHER MAIS ALTO: {maiorF}')
+print(f'MEDIA DA ALTURA DOS HOMENS: {mediaM:.2f} ')
+print(f'MEDIA DA ALTURA DAS MULHERES: {mediaF:.2f} ')
+print('PORCENTAGEM DE HOMENS E MULHERES COM MAIS DE 1.82 METROS')
+print(f'HOMENS: {porcM:.1f}% DE {qtdM} HOMENS')
+print(f'MULHERES: {porcF:.1f}% DE {qtdF} MULHERES')
+print(f'HOMENS E MULHERES: {porcMF:.1f}% DE {qtdM + qtdF} HOMENS E MULHERES')
+
+
+
 
