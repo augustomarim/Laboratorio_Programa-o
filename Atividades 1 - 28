@@ -302,7 +302,7 @@ print(f'HOMENS: {porcM:.1f}% DE {qtdM} HOMENS')
 print(f'MULHERES: {porcF:.1f}% DE {qtdF} MULHERES')
 print(f'HOMENS E MULHERES: {porcMF:.1f}% DE {qtdM + qtdF} HOMENS E MULHERES')       
 
-#15
+#14
 
 qtd = 0 
 somaN, soma1, soma2 = 0, 0, 0
