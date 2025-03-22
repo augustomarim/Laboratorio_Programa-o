@@ -254,6 +254,7 @@ while True:
     qtd += 1
     if(opcao == 0):
       print('PROGRAMA ENCERRADO!')
+      print('----------------------------------')
       break
     elif(opcao > 2 or opcao < 1):
       print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
@@ -284,13 +285,14 @@ while True:
           altosF += 1
   except Exception as ERRO_EXCECAO: 
     print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
-if(qtdM > 0 or qtdF > 0):
+if(qtdM > 0):
   mediaM = somaM / qtdM
-  mediaF = somaF / qtdF
   porcM = (altosM / qtdM) * 100
+if(qtdF > 0):
+  mediaF = somaF / qtdF
   porcF = (altosF / qtdF) * 100
+if(qtdM > 0 or qtdF > 0):
   porcMF = ((altosM + altosF) / (qtdM + qtdF)) * 100
-print('----------------------------------')
 print(f'ALTURA DO HOMEN MAIS ALTO: {maiorM}')
 print(f'ALTURA DA MULHER MAIS ALTO: {maiorF}')
 print(f'MEDIA DA ALTURA DOS HOMENS: {mediaM:.2f} ')
@@ -298,8 +300,55 @@ print(f'MEDIA DA ALTURA DAS MULHERES: {mediaF:.2f} ')
 print('PORCENTAGEM DE HOMENS E MULHERES COM MAIS DE 1.82 METROS')
 print(f'HOMENS: {porcM:.1f}% DE {qtdM} HOMENS')
 print(f'MULHERES: {porcF:.1f}% DE {qtdF} MULHERES')
-print(f'HOMENS E MULHERES: {porcMF:.1f}% DE {qtdM + qtdF} HOMENS E MULHERES')
+print(f'HOMENS E MULHERES: {porcMF:.1f}% DE {qtdM + qtdF} HOMENS E MULHERES')       
 
+#15
 
-
+qtd = 0 
+somaN, soma1, soma2 = 0, 0, 0
+porcN, porc1, porc2 = 0, 0, 0
+while True:
+    try:
+      if(qtd == 50):
+        break
+      print('MENU: CADASTRO DE VOTOS ')
+      print('OPÇÃO [1]: CADASTRAR VOTO')
+      print('OPÇÃO [0]: ENCERRAR A VOTAÇÃO')
+      opcao = int(input('SUA OPÇÃO: '))
+      if(opcao == 0):
+        print('VOTAÇÃO ENCERRADA!')
+        print('----------------------------------')
+        break
+      elif(opcao != 1):
+        print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
+      else:
+        print('DIGITE SEU VOTO: ')
+        print('OPÇÃO [1]: SINDICO 1 ')
+        print('OPÇÃO [2]: SINDICO 2 ')
+        print('OPÇÃO [0]: VOTO NULO ')
+        voto = int(input('SUA OPÇÃO: '))
+        if(voto < 0 or voto > 2):
+           print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
+        else:
+          if(voto < 1):
+            print('VOTO COMPUTADO')
+            somaN += 1
+          elif(voto < 2):
+            print('VOTO COMPUTADO')
+            soma1 += 1
+          else:
+            print('VOTO COMPUTADO')
+            soma2 += 1
+          qtd += 1
+          print('----------------------------------')
+    except Exception as ERRO_EXCECAO: 
+      print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+if(qtd > 0):
+  porcN = (somaN / qtd) * 100
+  porc1 = (soma1 / qtd) * 100
+  porc2 = (soma2 / qtd) * 100
+print('RESULTADO DA ELEIÇÃO: ')
+print(f'VOTOS NULOS: {porcN:.1f}%')
+print(f'VOTOS NO SINDICO 1: {porc1:.1f}%')        
+print(f'VOTOS NO SINDICO 2: {porc2:.1f}%') 
 
