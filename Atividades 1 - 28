@@ -353,3 +353,77 @@ print(f'VOTOS NULOS: {porcN:.1f}%')
 print(f'VOTOS NO SINDICO 1: {porc1:.1f}%')        
 print(f'VOTOS NO SINDICO 2: {porc2:.1f}%') 
 
+
+
+
+
+#15
+
+
+qtdP, qtdN, porcP, porcN = 0, 0, 0, 0
+qtd = 0
+while True:
+  try:
+    print('Digite um numero: ', end="")
+    numero = float(input())
+    if(numero == 0):
+      print('FIM DO PROGRAMA!')
+      break
+    else:
+      if(numero > 0):
+        qtdP += 1
+      else:
+        qtdN += 1
+    qtd += 1
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+if(qtd != 0):
+  porcP = (qtdP / qtd) * 100
+  porcN = (qtdN / qtd) * 100
+print(f'PORCENTAGEM DOS NUMEROS POSITIVOS: {porcP:.1f}%')
+print(f'PORCENTAGEM DOS NUMEROS NEGATIVOS: {porcN:.1F}%')
+
+
+
+#16
+
+
+maiorNP, menorNP, maiorNI, menorNI, qtd =  0, 0, 0, 0, 0
+while True:
+    try:
+      if(qtd == 10):
+        break
+      print('MENU DE OPÇÕES ')
+      print('OPÇÃO [1]: DIGITAR UM NÚMERO')
+      print('OPÇÃO [0]: ENCERRAR A VOTAÇÃO')
+      opcao = int(input('SUA OPÇÃO: '))
+      if(opcao == 0):
+        print('VOTAÇÃO ENCERRADA!')
+        print('----------------------------------')
+        break
+      elif(opcao != 1):
+        print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
+        print('----------------------------------')
+      else:
+        print('DIGITE UM NÚMERO: ',end="")
+        numero = float(input())
+        if(numero < 0):
+          print('ERROR: O NÚMERO TEM QUE SER POSITIVO')
+        else:
+          if(numero >= maiorNP and numero % 2 == 0):
+            maiorNP = numero
+          elif(numero <= menorNP and numero % 2 == 0):
+            menorNP = numero 
+          elif(numero >= maiorNI and numero % 2 != 0):
+            maiorNI = numero
+          else:
+            menorNI = numero
+          qtd +=1
+          print('----------------------------------')
+    except Exception as ERRO_EXCECAO: 
+      print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'MAIOR NÚMERO POSITIVO É {maiorNP}')
+print(f'MENOR NÚMERO POSITIVO É {menorNP}')
+print(f'MAIOR NÚMERO ÍMPAR É {maiorNI}')
+print(f'MENOR NÚMERO ÍMPAR É {menorNI}')
+
