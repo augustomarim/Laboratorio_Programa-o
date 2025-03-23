@@ -173,8 +173,9 @@ while True:
     if(numero == 0):
       print('FIM DO PROGRAMA!')
       break
-    if(numero > 10 and numero < 90 and numero % 5 == 2):
-      soma += numero
+    else:
+      if(numero > 10 and numero < 90 and numero % 5 == 2):
+        soma += numero
   except Exception as ERRO_EXCECAO: 
     print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
 print(f'Soma dos números lidos que, no intervalo entre [10 90], dividos por 5 possuem resto 2: {soma}')
