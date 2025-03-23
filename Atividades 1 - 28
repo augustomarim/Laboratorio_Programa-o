@@ -388,7 +388,7 @@ print(f'PORCENTAGEM DOS NUMEROS NEGATIVOS: {porcN:.1F}%')
 maiorNP, menorNP, maiorNI, menorNI, qtd =  0, 0, 0, 0, 0
 while True:
     try:
-      if(qtd == 10):
+      if(qtd == 300):
         break
       print('MENU DE OPÇÕES ')
       print('OPÇÃO [1]: DIGITAR UM NÚMERO')
@@ -424,3 +424,88 @@ print(f'MENOR NÚMERO POSITIVO É {menorNP}')
 print(f'MAIOR NÚMERO ÍMPAR É {maiorNI}')
 print(f'MENOR NÚMERO ÍMPAR É {menorNI}')
 
+#17
+
+import math
+menor = math.inf
+while True:
+  try:
+    print('Digite um numero: ', end="")
+    numero = float(input())
+    if(numero == 0):
+      print('FIM DO PROGRAMA!')
+      break
+    else:
+      if(numero < menor):
+        menor = numero
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'O MENOR NÚMERO LIDO É: {menor}')
+
+
+#18
+
+qtdC, qtd = 0, 0
+soma = 0
+while True:
+  try:
+    print('Digite um numero: ', end="")
+    numero = float(input())
+    if(qtd == 100):
+      print('FIM DO PROGRAMA!')
+      break
+    else:
+      if(numero % 2 != 0 and numero % 7 == 0):
+        soma += numero
+        qtdC += 1
+      qtd += 1
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'DE 100 NÚMEROS {qtdC} ESTAVAM NA EXCEÇÃO, E A MEDIA DELES É: {soma / qtdC:.2f}')
+
+
+#19
+
+quantidade = 0
+for contador in range(1000, 1500 + 1):
+  if(contador % 7 == 0 or contador % 13 == 0):
+    quantidade += 1
+    print(f'{quantidade}º NÚMERO: {contador}')
+
+#20
+
+qtd, vip, normal = 0, 0, 0
+porcV, porcN = 0, 0
+while True:
+    try:
+      print('MENU DE OPÇÕES ')
+      print('OPÇÃO [1]: INFORMAR SEU SALÁRIO')
+      print('OPÇÃO [0]: ENCERRAR A VOTAÇÃO')
+      opcao = int(input('SUA OPÇÃO: '))
+      if(opcao == 0):
+        print('VOTAÇÃO ENCERRADA!')
+        print('----------------------------------')
+        break
+      elif(opcao != 1):
+        print('ERRO: OPÇÃO INCORRETA. ESCOLHA NOVAMENTE')
+        print('----------------------------------')
+      else:
+        print('DIGITE O SEU SALÁRIO: ',end="")
+        numero = float(input())
+        if(numero < 0):
+          print('ERROR: O SALÁRIO NÃO PODE SER NEGATIVO')
+          print('----------------------------------')
+        else:
+          print('----------------------------------')
+          if(numero >= 5000):
+            vip += 1
+          else:
+            normal += 1
+          qtd += 1
+    except Exception as ERRO_EXCECAO: 
+      print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+if(qtd > 0):
+  porcV = (vip / qtd) * 100
+  porcN = (normal / qtd) * 100
+print(f'CLIENTES VIP: {porcV:.1f}%')
+print(f'CLIENTES NORMAL: {porcN:.1f}%')
