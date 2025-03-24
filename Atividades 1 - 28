@@ -509,3 +509,27 @@ if(qtd > 0):
   porcN = (normal / qtd) * 100
 print(f'CLIENTES VIP: {porcV:.1f}%')
 print(f'CLIENTES NORMAL: {porcN:.1f}%')
+
+
+#21
+
+
+import math
+soma = 0
+qtd = 0
+media = 0
+while True:
+  try:
+    print('Digite um numero: ', end="")
+    numero = float(input())
+    if(numero < 10 * (math.pi ** 3) or numero > 100 * math.pi):
+      print('FIM DO PROGRAMA!')
+      break
+    else:
+        soma += numero
+        qtd += 1
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+if(qtd > 0):
+  media = soma / qtd
+print(f'Media dos números lidos que, no intervalo entre [10 * π3, 100 * π] é: {media}')
