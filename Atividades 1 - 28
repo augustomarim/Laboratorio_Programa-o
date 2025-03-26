@@ -553,3 +553,195 @@ while True:
     print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
   media = soma / quantidade 
 print(f'Temperatura média dessa estação é {media:.1f} °C')
+
+
+
+#23
+
+import math
+menor = math.inf
+qtd, hora, minuto, segundo, inscrito = 0, 0, 0, 0, 0
+while True:
+  try:
+    if(qtd == 5):
+      break
+    print('tempo de prova (minutos): ', end='')
+    m = float(input())
+    if(m < 0):
+      print('ERROR: O TEMPO DE PROVA NÃO PODE SER MENOR QUE 0')
+      print('-------------------------------------------------')
+    else:
+      if(m < menor):
+        menor = m
+        inscrito = qtd
+        s = m * 60
+        hora = s // 3600
+        minuto = (s % 3600) // 60
+        segundo = s % 60
+      qtd += 1
+      print('-------------------------------------------------')
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'TEMPO DO 1º COLOCADO(INSCRITO: {inscrito}) É {hora:.0f}:{minuto:.0f}:{segundo:.0f}')
+
+
+
+#24
+
+qtd = 0
+valor = 0
+while True:
+  try:
+    if(qtd == 3):
+      break
+    print('Digite o preço da mercadoria: ', end='')
+    preco = float(input())
+    if(preco < 0):
+      print('ERROR: PREÇO NÃO PODE SER MENOR QUE 0')
+      print('-------------------------------------------------')
+    else:
+      ajuste = preco * 0.05
+      if(ajuste > 25.50):
+        ajuste = preco * 0.03
+      precoA = preco - ajuste
+      valor += preco - ajuste
+      qtd += 1
+      print(f'MERCADORIA NÚMERO {qtd}, após ajuste tem valor de {precoA:.2f} R$')
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'VALOR TOTAL DAS COMPRAS É IGUAL Á {valor:.2f} R$')
+
+
+#25
+
+while True:
+  try:
+    if(qtd == 500):
+      break
+    print('DIGITE SUA MASSA: ', end="")
+    massa = float(input())
+    if(massa < 0):
+      print('ERROR: MASSA NÃO PODE SER MENOR QUE 0')
+      print('-------------------------------------------------')
+    else:
+      print('DIGITE SUA IDADE: ', end="")
+      idade = int(input())
+      if(idade < 0):
+        print('ERROR: IDADE NÃO PODE SER MENOR QUE 0')
+        print('-------------------------------------------------')
+      else:
+        print('DIGITE [1] SE FOR DIABETICO E [0] SE NÃO FOR: ', end='')
+        opcao = int(input())
+        if(opcao < 0 or opcao > 1):
+          print('ERROR: OPCAO DEVE SER 0 OU 1')
+          print('-------------------------------------------------')
+        else:
+          if(opcao == 1):
+            taxaDiab = (massa ** 0.5) / (0.93 * idade)
+            print(f'SUA TAXA DE GLICOSE É {taxaDiab:.2f}')
+            print('-------------------------------------------------')
+          else:
+            taxaN = ((0.98 * massa) ** 0.5) / (1.08 * idade)
+            print(f'SUA TAXA DE GLICOSE É {taxaN:.2f}')
+            print('-------------------------------------------------')
+          qtd += 1
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}') 
+
+#26
+
+fundamental, medio, superior, qtd, qtdF, qtdM, qtdS = 0, 0, 0, 0, 0, 0, 0
+while True:
+  try:
+    if(qtd == 10000):
+      break
+    print('QUAL O SEU GRAU DE ESCOLARIDADE?')
+    print('FUNDAMENTAL [0]')
+    print('MEDIO [1]')
+    print('SUPERIOR [2]')
+    opcao = int(input())
+    if(opcao < 0 or opcao > 2):
+      print('ERROR: NUMERO DIGITADO ESTA FORA DAS OPÇOES')
+      print('-------------------------------------------------')
+    else:
+      print('QUAL O SEU SÁLARIO: ', end='')
+      salario = float(input())
+      if(salario < 0):
+        print('ERROR: O SALARIO DEVE SER UM NUMERO POSITIVO')
+        print('-------------------------------------------------')
+      else:
+        if(opcao == 0):
+          fundamental += salario
+          qtdF += 1
+        elif(opcao == 1):
+          medio += salario
+          qtdM += 1
+        else:
+          superior += salario
+          qtdS += 1
+        qtd += 1
+        print('-------------------------------------------------')
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}') 
+print('MÉDIA SALARIAL POR NIVEL DE ESCOLARIDADE: ')
+print(f'FUNDAMENTAL: {fundamental / qtdF:.2f}')
+print(f'MEDIO: {medio / qtdM:.2f}')
+print(f'SUPERIOR: {superior / qtdS:.2f}')
+
+#27
+
+
+qtdP, qtdN, mediaP, mediaN = 0, 0, 0, 0
+somaP, somaN = 0, 0
+while True:
+  try:
+    print('Digite um numero: ', end="")
+    numero = float(input())
+    if(numero == 0):
+      print('FIM DO PROGRAMA!')
+      break
+    else:
+      if(numero > 0):
+        somaP += numero
+        qtdP += 1
+      else:
+        somaN += numero
+        qtdN += 1
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+if(qtd != 0):
+  mediaP = somaP / qtdP
+  mediaN = somaN / qtdN
+print(f'MEDIA DOS NUMEROS POSITIVOS: {mediaP:.2f}')
+print(f'MEDIA DOS NUMEROS NEGATIVOS: {mediaN:.2F}')
+
+
+#28
+
+import math
+pi = math.pi
+resultadoSoma = 0
+resultadoMult = 0
+while True:
+  try:
+    print('SELECIONE UM VALOR INTEIRO POSITIVO MAIOR OU IGUAL Á 1: ', end='')
+    valor = int(input())
+    if(valor <= 0):
+      print('ERROR: O VALOR DEVE SER MAIOR OU IGUAL Á 1')
+    else:
+      for contador in range(0, valor + 1, 2):
+        if(contador == 0):
+          resultadoSoma += pi
+        else:
+          resultadoSoma += pi / contador
+      for contador in range(1, valor + 1, 2):
+        if(contador == 1):
+          resultadoMult += contador / pi
+        else:
+          resultadoMult *= contador / pi
+      break
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+print(f'VALOR DA SOMA = {resultadoSoma}')
+print(f'VALOR DA MULTIPLICAÇÃO = {resultadoMult}')
+
