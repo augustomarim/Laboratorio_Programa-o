@@ -533,3 +533,23 @@ while True:
 if(qtd > 0):
   media = soma / qtd
 print(f'Media dos números lidos que, no intervalo entre [10 * π3, 100 * π] é: {media}')
+
+
+#22
+
+
+soma, quantidade, media = 0, 0, 0
+while True:
+  try:
+    print(f'Digite o valor da temperatura de hoje: ', end="")
+    temp = float(input())
+    if(temp > 5 or temp < -15 ):
+      print('ERROR: TEMPERATURA FORA DA ESTAÇÃO')
+      break
+    else:
+      quantidade += 1
+      soma += temp
+  except Exception as ERRO_EXCECAO: 
+    print(f'ERRO DE EXCEÇÃO: {ERRO_EXCECAO}')
+  media = soma / quantidade 
+print(f'Temperatura média dessa estação é {media:.1f} °C')
