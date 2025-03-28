@@ -1,0 +1,46 @@
+#8
+
+def fibonacci(n = 0):
+  if(n == 0 or n == 1):
+    return 0
+  elif(n == 2):
+    return 1
+  else:
+    anterior, atual, soma = 0, 1, 1
+    for contador in range(3, n+1, 1):
+      novo = atual + anterior
+      anterior = atual
+      atual = novo
+      soma += novo
+    return soma
+
+while True:
+  try:
+    print('   SÉRIE FIBONACCI   ')
+    print('---------------------')
+    print('MENU DE OPÇOES: ')
+    print('DIGITE [0] PARA SAIR')
+    print('DIGITE [1] PARA CONTINUAR')
+    opcao = int(input())
+    if(opcao < 0 or opcao > 1):
+      print('ERROR: DIGITE 0 OU 1')
+      print('--------------------')
+    else:
+      if(opcao == 0):
+        print('ENCERRANDO O PROGRAMA!')
+        print('----------------------')
+        break
+      else:
+        print('DIGITE UM VALOR INTEIRO POSITIVO: ', end='')
+        n = int(input())
+        if(n < 0):
+          print('ERROR: VALOR DEVE SER INTEIRO E POSITIVO!')
+          print('-----------------------------------------')
+        else:
+          soma = fibonacci(n)
+          print(f'VALOR DA SOMA DOS {n} PRIMEIROS TERMOS DA SÉRIE FIBONACCI: ',end='')
+          print(f'{soma}')
+          print('-----------------------------------------------------------')
+          break     
+  except Exception as ERRO_EXCECAO:
+    print(f'ERROR: {ERRO_EXCECAO}') 
