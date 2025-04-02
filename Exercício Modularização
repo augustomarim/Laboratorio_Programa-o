@@ -44,3 +44,59 @@ while True:
           break     
   except Exception as ERRO_EXCECAO:
     print(f'ERROR: {ERRO_EXCECAO}') 
+
+
+#10
+
+import math
+def arranjof(n = 0, p = 0):
+  arranjo = math.factorial(n) / math.factorial(n-p)
+  return arranjo
+
+def combinacaof(n = 0, p = 0):
+  combinacao = arranjof(n, p) / math.factorial(p)
+  return combinacao
+
+
+arranjo, combinacao, n, p = 0, 0, 0, 0
+while True:
+  try:
+    print('Digite o valor de n: ',end='')
+    n = int(input())
+    print('Digite o valor de p: ',end='')
+    p = int(input())
+    if(n < 0 or p < 0 or p > n):
+      print('ERROR: N e P devem ser maior ou igual a 0, e N maior ou igual a P')
+    else:
+      resulArranjo = arranjof(n, p)
+      resulCombinacao = combinacaof(n, p)
+      print(f'O resultado do Arranjo e da Combinação é {resulArranjo} e {resulCombinacao}')
+      break
+  except Exception as ERRO_EXCECAO:
+    print(f'ERROR: {ERRO_EXCECAO}')
+
+#16
+
+import math
+def areaf(r = 0):
+  area = math.pi * (r**2)
+  return area
+
+def volumef(r = 0, h = 0):
+  volume = areaf(r) * h
+  return volume
+
+while True:
+  try:
+    r = float(input('DIGITE VALOR DE R: '))
+    h = float(input('DIGITE VALOR DE H: '))
+    if(r < 0 or h < 0):
+      print('ERROR: R E H DEVEM SER MAIORES QUE 0')
+    else:
+      a = areaf(r)
+      v = volumef(r, h)
+      print(f'VALOR DA ÁREA É {a:.2f}, E VALOR DO VOLUME É {v:.2f}')
+  except Exception as ERRO:
+    print(f'ERROR: {ERRO}')
+
+#17
